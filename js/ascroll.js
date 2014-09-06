@@ -12,6 +12,7 @@ var $ = function(selector, context) {
 			var acl  = $('[data-accordion_layer]'),
 				lLen = acl.length,
 				index;
+
 			// setup accordion parallax
 			while (lLen--) {
 				index = +acl[lLen].getAttribute('data-accordion_layer');
@@ -24,9 +25,7 @@ var $ = function(selector, context) {
 			}
 
 			// bind scroll handler
-			this.doc = document.documentElement;
 			root.addEventListener('scroll', this.doScroll, false);
-			root.scrollTo(0,1);
 		},
 		doScroll: function(event) {
 			var self       = this.accordion,
@@ -37,6 +36,7 @@ var $ = function(selector, context) {
 				itemObj,
 				itemTop;
 			if (this.innerWidth < 641) return;
+			//console.log( scrollTop );
 
 			if (!scrollTop || scrollTop < 0) {
 				scrollTop = 0;
@@ -48,6 +48,7 @@ var $ = function(selector, context) {
 			// accordion effect
 			if (!self.time) {
 				// scroll starts
+				if ( scrollTop + winHeight >= document.body.offsetHeight ) return;
 				//console.log( 'scroll starts' );
 				self.scrollStartTop = scrollTop;
 				while (layersLen--) {
@@ -62,7 +63,7 @@ var $ = function(selector, context) {
 			layersLen = self.layers.length;
 			while (layersLen--) {
 				itemObj = self.layers[self.layers.length-layersLen-1];
-				itemTop = (scrollTop - self.scrollStartTop) * 0.5;
+				itemTop = (scrollTop - self.scrollStartTop) * 0.9;
 				itemObj.el.style.top = itemTop +'px';
 			}
 
@@ -77,7 +78,6 @@ var $ = function(selector, context) {
 					el.style.top = '0px';
 				}
 				self.time = false;
-				self.tops = [];
 			}, 80);
 		},
 		getDim: function(el, a, v, trace) {
