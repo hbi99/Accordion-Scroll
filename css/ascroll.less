@@ -1,0 +1,119 @@
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400);
+
+html {
+	height: 100%;
+}
+
+body {
+	background: #fff;
+	color: #333;
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 18px;
+	line-height: 26px;
+	text-align: center;
+	padding: 240px 0px 0px;
+	height: 100%;
+}
+
+a {
+	color: #559;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+h1 {
+	margin: 0px 0px 15px;
+	text-shadow: 0px 2px 2px #aaa;
+}
+h2 {
+	margin: 0px 0px 10px;
+	font-weight: 400;
+}
+h3 {
+	margin: 40px 0px 0px;
+}
+
+code {
+	background-color: #eee;
+	border: #ccc 1px solid;
+	font-size: 16px;
+	color: #559;
+	padding: 3px 8px;
+	border-radius: 3px;
+}
+
+
+@speed: 300ms;
+.accordion_layer {
+	&.align {
+		&.al-1 { .transition(@speed + 100ms); }
+		&.al-2 { .transition(@speed + 200ms); }
+		&.al-3 { .transition(@speed + 300ms); }
+		&.al-4 { .transition(@speed + 400ms); }
+		&.al-5 { .transition(@speed + 500ms); }
+		&.al-6 { .transition(@speed + 600ms); }
+		&.al-7 { .transition(@speed + 700ms); }
+		&.al-8 { .transition(@speed + 800ms); }
+		&.al-9 { .transition(@speed + 900ms); }
+	}
+}
+
+.instructions {
+	margin: 0px auto;
+	padding: 10px 0px;
+	width: 445px;
+
+	a {
+		color: inherit;
+		display: block;
+		margin-top: 20px;
+
+		&.fork_me {
+			margintop: 60px;
+		}
+	}
+}
+
+/*
+ * Mixins
+ */
+.delay (@duration: 400ms) {
+	transition-delay:         @duration;
+	-webkit-transition-delay: @duration;
+	-moz-transition-delay:    @duration;
+	-ms-transition-delay:     @duration;
+}
+.transition (@duration: 400ms) {
+	transition:         all @duration ease-in-out;
+	-webkit-transition: all @duration ease-in-out;
+	-moz-transition:    all @duration ease-in-out;
+	-ms-transition:     all @duration ease-in-out;
+}
+.transitionWhat (@what: all, @duration: 400ms) {
+	transition:         @what @duration ease-in-out;
+	-webkit-transition: @what @duration ease-in-out;
+	-moz-transition:    @what @duration ease-in-out;
+	-ms-transition:     @what @duration ease-in-out;
+}
+.select(@val) {
+	user-select:         @val;
+	-webkit-user-select: @val;
+	-moz-user-select:    @val;
+	-ms-user-select:     @val;
+}
+.transform (@val) {
+	transform:         @val;
+	-webkit-transform: @val;
+	-moz-transform:    @val;
+	-ms-transform:     @val;
+}
+.transformOrigin (@val) {
+	transform-origin:         @val;
+	-webkit-transform-origin: @val;
+	-moz-transform-origin:    @val;
+	-ms-transform-origin:     @val;
+}
