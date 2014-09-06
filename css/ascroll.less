@@ -1,6 +1,13 @@
 
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:400);
 
+* {
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 html {
 	height: 100%;
 }
@@ -66,7 +73,7 @@ code {
 .content {
 	background: #eef;
 	position: relative;
-	top: 260px;
+	top: 140px;
 	padding: 25px 0px
 }
 
@@ -83,6 +90,29 @@ code {
 		&.fork_me {
 			margintop: 60px;
 		}
+	}
+}
+
+.circles {
+	position: relative;
+	top: 300px;
+
+	div {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		border-radius: 50%;
+		border: 8px solid rgba(0,0,0,0.25);
+
+		&:nth-child(1) { width: 40px; height: 40px; margin: -20px 0px 0px -20px; }
+		&:nth-child(2) { width: 60px; height: 60px; margin: -30px 0px 0px -30px; }
+		&:nth-child(3) { width: 80px; height: 80px; margin: -40px 0px 0px -40px; }
+		&:nth-child(4) { width: 100px; height: 100px; margin: -50px 0px 0px -50px; }
+		&:nth-child(5) { width: 120px; height: 120px; margin: -60px 0px 0px -60px; }
+		&:nth-child(6) { width: 140px; height: 140px; margin: -70px 0px 0px -70px; }
+		&:nth-child(7) { width: 160px; height: 160px; margin: -80px 0px 0px -80px; }
+		&:nth-child(8) { width: 180px; height: 180px; margin: -90px 0px 0px -90px; }
+		&:nth-child(9) { width: 200px; height: 200px; margin: -100px 0px 0px -100px; }
 	}
 }
 
